@@ -15,13 +15,70 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+h2{
+color: #666;
+}
+
+.MemoryCard {
+  display: inline-block;
+  width: 150px;
+  height: 80px;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+  perspective: 800px;
+}
+
+.MemoryCardInner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 5px;
+  border: 3px solid navy;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.MemoryCardBack{
+  
+ 
+  border: solid 3px navy;
+  cursor: pointer;
+  background-color: navy;
+}
+
+.MemoryCardBack,
+.MemoryCardFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.MemoryCardFront {
+  padding-top: 30px;
+  font-size: 30px;
+  line-height: 20px;
+  transform: rotateY(180deg);
+}
+
+.MemoryCardInner.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardBack{
+  width: 50%;
+  
 }
 
 .App-link {
